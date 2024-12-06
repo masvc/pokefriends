@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>フレンド募集 - Pokémon Card Pocket</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+      }
+
+      .header-container {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #ffd700;
+      }
+
+      main {
+        width: 90%;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .friend-recruitment {
+        margin: 0 auto;
+        padding: 0 10%;
+      }
+
+      .friend-recruitment h2 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.5em;
+      }
+
+      .friend-recruitment p {
+        margin: 10px 0 20px;
+        color: #555;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin: 10px 0 5px;
+        color: #333;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        font-size: 1em;
+        width: 100%;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+
+      .posts {
+        margin-top: 40px;
+      }
+
+      .post {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        transition: box-shadow 0.3s;
+      }
+
+      .post:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .post .friend-id {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .post .friend-id button {
+        margin-left: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        background-color: #eee;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+
+      .post .friend-id button:hover {
+        background-color: #ddd;
+      }
+
+      .post .friend-id-number {
+        font-size: 1.2em;
+        margin-top: 5px;
+        color: #333;
+      }
+
+      .post .content {
+        margin-top: 10px;
+        color: #555;
+      }
+
+      .post .timestamp {
+        color: #888;
+        font-size: 0.9em;
+        margin-top: 10px;
+      }
+
+      .like-section {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .like-section .delete-button {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: red;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      footer a {
+        color: #ffd700;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .header-container,
+        main {
+          width: 100%;
+          padding: 0 5%;
+        }
+
+        .friend-recruitment {
+          padding: 0 5%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Pokémon Card Pocket フレンド募集</h1>
+        <nav>
+          <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">カードリスト</a></li>
+            <li><a href="#">デッキ作成</a></li>
+            <li><a href="#">コミュニティ</a></li>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="friend-recruitment">
+        <h2>フレンド募集</h2>
+        <p>
+          ポケモンカードを一緒に楽しむフレンドを募集しています。以下のフォームから応募してください。
+        </p>
+        <form action="#" method="post">
+          <label for="username">名前:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="friend-id">フレンドID:</label>
+          <input type="text" id="friend-id" name="friend-id" required />
+
+          <label for="message">本文:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <label for="photo1">写真1:</label>
+          <input type="file" id="photo1" name="photo1" />
+
+          <label for="photo2">写真2:</label>
+          <input type="file" id="photo2" name="photo2" />
+
+          <button type="submit">書き込む</button>
+        </form>
+      </section>
+
+      <section class="posts">
+        <div class="post">
+          <div class="friend-id">
+            <span>11435 ヌメルゴン [フレンドID]</span>
+            <button onclick="copyFriendId()">コピー</button>
+          </div>
+          <div class="friend-id-number">3596 3021 7261 1128</div>
+          <div class="content">
+            <p>
+              フレンド募集しています。コレクションいいねしてほしいです
+              フレンド登録してくれた方には、コレクションにいいねを押します
+            </p>
+          </div>
+          <div class="like-section">
+            <span class="timestamp">34分前</span>
+            <div class="delete-button">
+              <i class="fa fa-trash"></i>
+              <span>削除</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>
+          &copy; 2024 Pokémon. &copy; 1995-2024 Nintendo / Creatures Inc. / GAME
+          FREAK inc. &copy; 2024 DeNA Co., Ltd. All rights reserved.<br />
+          ※掲載しているゲーム内画像の著作権、商標権その他の知的財産権は、当該コンテンツの提供元に帰属します<br />
+          <a href="https://example.com"
+            >Pokémon Trading Card Game Pocket公式サイト</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function copyFriendId() {
+        const friendId =
+          document.querySelector(".friend-id-number").textContent;
+        navigator.clipboard.writeText(friendId).then(() => {
+          alert("フレンドIDがコピーされました: " + friendId);
+        });
+      }
+    </script>
+  </body>
+</html>
